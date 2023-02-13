@@ -2,33 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CarList</title>
+    <meta charset="UTF-8">
+    <title>cars</title>
 </head>
 <body>
-<div>
-
-  <table bgcolor="#fffacd" border="4">
-
-    <tr>
-      <th scope="col" bgcolor="#d2691e">Color</th>
-      <th scope="col" bgcolor="#d2691e" >Seats</th>
-      <th scope="col" bgcolor="#d2691e">Speed</th>
-    </tr>
-
-
-  <tr th:each="car: ${carList}">
-
-    <td style="text-align: center" th:text="${car.getColor()}"></td>
-
-    <td style="text-align: center"  th:text="${car.getSeats()}"></td>
-
-    <td style="text-align: center" th:text="${car.getSpeed()}"></td>
-
-  </tr>
-  </table>
-
-
-</div>
+    <table>
+        <thead>
+            <tr>
+                <th>model</th>
+                <th>year</th>
+                <th>maxSpeed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.getModel()}"></td>
+                <td th:text="${car.getYear()}"></td>
+                <td th:text="${car.getMaxSpeed()}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
